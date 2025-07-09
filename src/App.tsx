@@ -1,9 +1,16 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import HomeLayout from "./layouts/HomeLayout.tsx";
+
 function App() {
   return (
-    <div>
-      <h1>Hello, PumpMaster!</h1>
-      <p>This is a React + TypeScript isolated demo.</p>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route element={<HomeLayout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
