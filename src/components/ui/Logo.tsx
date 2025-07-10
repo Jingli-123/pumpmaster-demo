@@ -1,35 +1,35 @@
 /**
  * @description: This is the logo component which is used to display the logo of the website
  * @param logoSize: The size of the logo
- * @param fontSize: The size of the font
- * @param fontFamily: The font family of the font
- * @param className: The class name of the logo
+ * @param logoImage: The image of the logo
+ * @param className: Tailwind styles
+ * @param navigation: The navigation of the logo
+ * @param fontWeight: The font weight of the logo text
+ * @param textColor: The color of the logo text
+ * @param flexDirection: The flex direction of the logo
+ * @returns: The logo component
  */
 import React from "react";
-import logoImage from "../../assets/logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface Props {
+  logoImage: string;
   logoSize: number;
-  fontSize: number;
-  fontFamily: string;
-  className?: string; 
   navigation: string;
+  fontFamily?: string;
   fontWeight?: string;
   textColor?: string;
   flexDirection?: "row" | "column";
-  responsiveDisplay?: string; 
 }
 
 const Logo = ({
-  logoSize,
-  fontSize,
-  fontFamily,
-  className = "", 
   navigation,
+  logoImage,
+  logoSize,
+  fontFamily,
   fontWeight,
-  flexDirection = "column",
-  responsiveDisplay = "flex md:hidden 2xl:flex", 
+  textColor,
+  flexDirection,
 }: Props) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -47,27 +47,20 @@ const Logo = ({
   };
 
   return (
-    <div className={className}>
+    <div className={`flex ${flexDirection === "column" ? "flex-col" : "flex-row"} items-start justify-start m-2`}>
       <a
         href={navigation}
         onClick={handleClick}
-        className="flex items-center justify-center text-decoration-none"
-        style={{ flexDirection: flexDirection }}
+        className={`decoration-none flex items-center justify-center text-black
+          no-underline`}
       >
         <img
-          src={logoImage}
+          src={`${logoImage}`}
           alt="logo"
-          style={{ height: `${logoSize}px`, width: `${logoSize}px` }}
+          className={`w-${logoSize} h-${logoSize} ${textColor}`}
         />
         <span
-          style={{
-            fontSize: `${fontSize}px`,
-            fontFamily: `${fontFamily}`,
-            fontWeight: fontWeight || "bold",
-            marginLeft: flexDirection === "row" ? "20px" : "0",
-            marginTop: flexDirection === "column" ? "10px" : "0",
-          }}
-          className={`${responsiveDisplay} text-decoration-none  `} 
+        className={`${fontFamily} ${fontWeight}  decoration-none ml-2`}
         >
           PumpMaster
         </span>

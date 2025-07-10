@@ -1,10 +1,9 @@
-import HomeLayout from "../layouts/HomeLayout";
+
+import Login from "../components/react-components/Login.tsx";
 const Home = () => {
     return (
         <>
-        <HomeLayout>
-            <h1>Home</h1>
-        </HomeLayout>
+        <Login/>
         </>
     );
 }
