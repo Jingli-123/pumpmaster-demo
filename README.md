@@ -30,7 +30,7 @@ VITE_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmF
 npm install
 ````
 
-4. **Start the application with docker local**
+4. **Start the application locally**
 ```bash
 npm run dev
 ```
