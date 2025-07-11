@@ -9,9 +9,6 @@ A demo of farm pump location
 
 ## Quick Start
 
-### Prerequistites
-
-- Docker
 
 ### Installation
 
@@ -33,7 +30,17 @@ VITE_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmF
 npm install
 ````
 
-4. **Start the application**
+4. **Start the application with docker local**
+```bash
+npm run dev
+```
+
+This will:
+- Launch demo frontend app on port 5173
+
+Access the application at: http://localhost:5173
+
+5. **Start the application with docker (option)**
 ```bash
 docker build -t pumpmaster-demo .
 ```
