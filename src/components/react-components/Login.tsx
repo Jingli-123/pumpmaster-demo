@@ -19,7 +19,7 @@ const Login = () => {
     // const response = await loginApi(username, password);
     // const {token, user} = response;
     // demo token 
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+    const token = import.meta.env.VITE_TOKEN;
     localStorage.setItem('token', token);
     // localStorage.setItem('user', JSON.stringify(user));
     navigate('/dashboard');

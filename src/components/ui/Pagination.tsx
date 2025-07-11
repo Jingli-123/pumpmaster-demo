@@ -22,6 +22,8 @@ const Pagination = ({ totalItems, itemsPerPage, onPageChange }: {
     <div className="flex space-x-2 mt-4 justify-center">
       {pages.map((page) => (
         <button
+          data-testid={`page-${page}`}
+          type="button"
           key={page}
           onClick={() => handleClick(page)}
           className={`px-3 py-1 rounded border ${

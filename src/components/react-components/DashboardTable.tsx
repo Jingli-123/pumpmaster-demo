@@ -10,7 +10,6 @@ const DashboardTable = () => {
     // import dummy data then create page numbers
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
-    const totalPages = Math.ceil(dummyPumpData.length / itemsPerPage);
     const paginatedData = dummyPumpData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
     
