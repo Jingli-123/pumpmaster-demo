@@ -9,8 +9,8 @@
  * @param flexDirection: The flex direction of the logo
  * @returns: The logo component
  */
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface Props {
   logoImage: string;
@@ -19,7 +19,7 @@ interface Props {
   fontFamily?: string;
   fontWeight?: string;
   textColor?: string;
-  flexDirection?: "row" | "column";
+  flexDirection?: 'row' | 'column';
 }
 
 const Logo = ({
@@ -39,7 +39,7 @@ const Logo = ({
 
     if (location.pathname === navigation) {
       // Already on home page, scroll to top
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Navigate to home page
       navigate(navigation);
@@ -47,7 +47,11 @@ const Logo = ({
   };
 
   return (
-    <div className={`flex ${flexDirection === "column" ? "flex-col" : "flex-row"} items-start justify-start m-2`}>
+    <div
+      className={`flex ${
+        flexDirection === 'column' ? 'flex-col' : 'flex-row'
+      } items-start justify-start m-2`}
+    >
       <a
         href={navigation}
         onClick={handleClick}
@@ -59,11 +63,7 @@ const Logo = ({
           alt="logo"
           className={`w-${logoSize} h-${logoSize} ${textColor}`}
         />
-        <span
-        className={`${fontFamily} ${fontWeight}  decoration-none ml-2`}
-        >
-          PumpMaster
-        </span>
+        <span className={`${fontFamily} ${fontWeight}  decoration-none ml-2`}>PumpMaster</span>
       </a>
     </div>
   );

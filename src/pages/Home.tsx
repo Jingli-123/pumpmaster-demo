@@ -1,10 +1,9 @@
-
-import Login from "../components/react-components/Login.tsx";
+import Login from '../components/react-components/Login.tsx';
 const Home = () => {
-    return (
-        <>
-        <Login/>
-        </>
-    );
-}
+  return (
+    <>
+      <Login />
+    </>
+  );
+};
 export default Home;

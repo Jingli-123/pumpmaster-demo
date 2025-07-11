@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const Pagination = ({ totalItems, itemsPerPage, onPageChange }: {
+const Pagination = ({
+  totalItems,
+  itemsPerPage,
+  onPageChange,
+}: {
   totalItems: number;
   itemsPerPage: number;
   onPageChange: (page: number) => void;
@@ -28,8 +32,8 @@ const Pagination = ({ totalItems, itemsPerPage, onPageChange }: {
           onClick={() => handleClick(page)}
           className={`px-3 py-1 rounded border ${
             page === currentPage
-              ? "bg-blue-500 text-white border-blue-500"
-              : "bg-white text-blue-500 border-blue-500 hover:bg-blue-100"
+              ? 'bg-blue-500 text-white border-blue-500'
+              : 'bg-white text-blue-500 border-blue-500 hover:bg-blue-100'
           }`}
         >
           {page}
